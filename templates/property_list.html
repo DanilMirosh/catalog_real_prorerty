@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список объектов недвижимости</title>
+</head>
+<body>
+    <h1>Список объектов недвижимости</h1>
+    <ul>
+        {% for property in properties %}
+            <li><a href="{{ url_for('property_detail', property_id=property[0]) }}">{{ property[1] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог недвижимости</title>
+</head>
+<body>
+    <h1>Каталог недвижимости</h1>
+    <form method="POST">
+        <label for="min_area">Минимальная площадь:</label>
+        <input type="number" name="min_area" id="min_area">
+        <br>
+        <label for="max_floor">Максимальный этаж:</label>
+        <input type="number" name="max_floor" id="max_floor">
+        <br>
+        <label for="metro_station">Ближайшая станция метро:</label>
+        <input type="text" name="metro_station" id="metro_station">
+        <br>
+        <input type="submit" value="Применить фильтр">
+    </form>
+    <ul>
+        {% for property in properties %}
+            <li><a href="/property/{{ property[0] }}">{{ property[1] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
