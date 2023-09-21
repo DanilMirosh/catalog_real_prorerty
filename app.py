@@ -1,14 +1,21 @@
 from flask import Flask, render_template, request
 import psycopg2
+from decouple import config
+
+# Чтение значений из .env файла
+DB_NAME = config('DB_NAME')
+DB_USER = config('DB_USER')
+DB_PASSWORD = config('DB_PASSWORD')
+DB_HOST = config('DB_HOST')
 
 app = Flask(__name__)
 
 # Настройки подключения к базе данных PostgreSQL
 db_settings = {
-    'dbname': 'postgres',
-    'user': 'postgres',
-    'password': 'postgres',
-    'host': 'localhost',
+    'dbname': DB_NAME,
+    'user': DB_USER,
+    'password': DB_PASSWORD,
+    'host': DB_HOST,
 }
 
 
