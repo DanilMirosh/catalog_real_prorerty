@@ -37,3 +37,28 @@ Flask - версия фляги посвежее.
 - Flask - 2.3.3
 - Jinja2 - 3.1.2
 - Postgresql
+
+### Запуск
+- Склонируйте [репозиторий](https://github.com/DanilMirosh/catalog_real_prorerty)
+- Настроить виртуальное окружение
+````python
+python3 -m venv venv
+
+source ./.venv/bin/activate
+````
+- Установите зависимости
+````python
+pip install -r requirements.txt
+````
+- Настройть базу
+````postgresql
+psql -U postgres <name_db> < create_db.sql
+````
+- заполнить базу
+````postgresql
+psql -U postgres < write_in_db.sql
+````
+- запустить приложение
+```python
+python app.py
+```
